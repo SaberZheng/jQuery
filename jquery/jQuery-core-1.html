@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>当页面上的全部元素都就绪后执行某个函数</title>
+    <!--导入jQuery的库-->
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            console.log("文档就绪")
+            var properties={
+                "border":"1px solid blue ",
+                "width":"80%",
+                "height":"80px",
+                "margin":"20px auto",
+                "padding":"20px 20%",
+                "text-align":"center"
+            };
+            $("#first").css(properties).html("当页面上的全部元素都就绪后执行某个函数");
+        });
+    </script>
+</head>
+<body>
+    <div id="first"></div>
+</body>
+</html>

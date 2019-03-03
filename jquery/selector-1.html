@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS选择器</title>
+    <style type="text/css">
+        div{box-shadow:1px 1px 1px 1px #d5de2b;margin: 20px }
+        /*相邻弟节点选择器*/
+        .container+p{text-align: center}
+        /*普通弟节点选择器*/
+        .container~p{background-color: #7FFFD4}
+        /*所有 class="container" 且 class="content-center" 的元素,之间没有空格*/
+        .container.content-center{background-color: bisque}
+    </style>
+    <!--导入jQuery的库-->
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            /*返回的是DOM元素组成的类数组对象（NodeList/NamedMapList）*/
+            var div = document.querySelectorAll(".container.content-center");
+            console.log(div);
+            /*返回封装了所选择的DOM元素的jQuery实例*/
+            var jo=$(".container.content-center");
+            jo.css("text-align","center");
+        })
+
+    </script>
+</head>
+
+<body>
+    <p>第一段</p>
+    <div class="container content-center">这是一个盒子
+        <div class="first"></div>
+        <div class="second"></div>
+        <div class="third"></div>
+    </div>
+    <div class="content-center">这还是一个盒子</div>
+    <p>第二段</p>
+    <p>第三段</p>
+</body>
+</html>

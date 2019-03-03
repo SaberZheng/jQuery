@@ -1,0 +1,84 @@
+jQuery 对象被绑定到 window$上，window.$=window.jQuery=jQuery
+将dom对象包装成jQuery对象
+min压缩版
+(function(e){})("hello");函数立即执行
+40行位置是函数，
+如果有window就传window如果没有就传当前对象
+
+完全就绪以后才会执行$().ready()
+
+
+( function( global, factory ) {
+
+	} )( typeof window !== "undefined" ? window : this, function( window, noGlobal ) {
+
+});
+
+核心是factory这个函数，这个函数内部定义了jQuery对象（并对该对象做出了扩展）
+
+在factory对应的函数内部：
+		window.jQuery = window.$ =jQuyery;
+如果需要将$或者jQuyery在window对象上的绑定被废弃
+	只废弃window.$属性
+		jQuery.noConflict();
+	同时废弃window.jQuery、window.$属性
+		jQuery.noConflict(true);
+【核心函数】
+    jQuery()或$()
+    1》、当页面上的全部元素都就绪后执行某个函数
+         相当于 $(document).ready()的简写
+
+        $(callback)或jQuery(callback)
+
+        $(function(){
+
+        })
+    2》、根据参数指定的选择器，选择页面上的DOM元素，并包装到一个jQuery实例中
+        $(selector)或jQuery(selector)
+
+        $(".hello")选择页面上的class属性包含hello的那些DOM元素，并封装成一个jQuery实例
+
+        $("#first")选择页面上id="first"的首个DOM元素，并封装成一个jQuery实例
+
+    3》、根据参数给定的HTML代码片段，来创建DOM对象，并将这些DOM对象分装封装到一个jQuery实例
+
+        $(html)或jQuery(html)
+
+        $("<i>恭喜</i><b>发财</b>")
+
+        $("<i>恭喜您，这个用户名可以使用</i>")
+
+    4》、根据参数传入的DOM对象封装一个jQuery实例,直接将DOM对象封装成功一个jQuery实例
+【选择器】
+    CSS常用选择器
+    /*选取所有的*/
+    *{}
+    /*class选择器*/
+    .className{}
+    /*id选择器*/
+    #id{}
+    /*元素选择器*/
+    element{}
+    /*后代选择器（多个级别用空格分割开，包含关系，对className里的div进行设置样式）*/
+    .className div{}
+    /*"并且选择器"，选择class中包含className1且包含className2的元素*/
+    .className1.className2
+    /*直接子元素选择器（父子级别用>分隔开）*/
+    div>ul{}
+    /*组合选择器（多个选择器之间用逗号隔开,对多个进行设置样式）*/
+    .className1 , .className2{}
+    /*属性选择器*/
+    input[type=text]{}
+    a[href$=.jpg]以jpg为结尾
+    a[href^=.jpg]以jpg为开始
+    /*相邻弟节点选择器*/
+    div+p{}
+    /*普通弟节点选择器*/
+    div~p{}
+    /*伪类选择器*/
+    a:link{}选择所有未访问过的链接
+    :visited被访问过的链接
+    :active正在活动的链接
+    :hover鼠标悬浮
+    :focus被选中了
+    :first-child第一个子节点

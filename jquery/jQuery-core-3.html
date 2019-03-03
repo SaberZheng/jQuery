@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>根据参数传入的DOM对象封装一个jQuery实例</title>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            //通过jQuery函数选中class中包含hello的那些元素
+            var divs = document.querySelectorAll(".hello");
+            /* for (var x = 0,n=divs.length;x<n;x++){
+                 divs[x].innerHTML="hello,world";
+             }*/
+            //根据参数传入的DOM对象封装一个jQuery实例
+            var jo = $(divs);
+            jo.html("Hello,jQuery !");
+        });
+    </script>
+</head>
+
+<body>
+    <div class="hello"></div>
+    <div class="hello"></div>
+    <div class="hello"></div>
+    <div class="hello"></div>
+    <div class="hello"></div>
+</body>
+</html>

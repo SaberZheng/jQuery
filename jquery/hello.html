@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>体验jQuery</title>
+</head>
+<!--导入jQuery库，将jQuery的库导入进来立即执行了里面的函数，内部造了一个局部变量jQuery，然后将这个局部变量赋值到了Window的jQuery和$上，
+在页面上就可以用$和jQuery -->
+<script src="../js/jquery-3.3.1.min.js"></script>
+<!--使用jQuery提供的支持开始写自己的script代码-->
+<script type="text/javascript">
+    /*$使一个函数，用jQuery函数选中整个文档，让整个文档就绪后，再执行ready里面的函数mytest函数*/
+    function mytest(){
+        //通过jQuery函数选中class中包含hello的那些元素
+        var divs = $(".hello");//document.querySelectorAll(".hello")
+        //jQuery函数返回一个包装了所选择的DOM元素的jQuery对象
+        divs.html("Hello,jQuery !");
+        //每次都返回this，因此可以使用方法链路
+        divs.css("border","1px solid blue ");
+        divs.css("width","80%");
+        divs.css("height","80px");
+        divs.css("margin","20px auto");
+        divs.css("padding","20px 20%");
+        console.log(divs);
+    }
+    $(document).ready(mytest)
+</script>
+<body>
+    <div class="hello"></div>
+    <div class="hello"></div>
+    <div class="hello"></div>
+    <div class="hello"></div>
+    <div class="hello"></div>
+</body>
+</html>

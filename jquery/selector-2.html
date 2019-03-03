@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery选择器</title>
+    <!--导入jQuery库-->
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <style>
+        div{
+            border-top-right-radius:
+        ;
+            border-bottom-left-radius: ;
+
+        }
+    </style>
+    <script type="text/javascript">
+        $(function () {
+            //设置间距（左右，上下）
+            $(".tab").css("width","100%").css("border-spacing","0 0").css("border-radius","25px");
+            $(".tab tr td ").css("width","20%").css("height","50px").css("border","2px solid #dedede");
+            /* $(".tab tr:first").css("background-color","#7FFFD4")
+             $(".tab tr:last").css("background-color","#7FFFD4")*/
+           /*设置偶数行的背景色*/
+           $(".tab tr:even").css("background-color","#7FFFD4");
+            /*设置奇数行的背景色*/
+           $(".tab tr:odd").css("background-color","#ffb7d9");
+           /*设置表的圆角*/
+            $(".tab tr:first td:first").css("border-top-left-radius","25px");
+            $(".tab tr:first td:last").css("border-top-right-radius","25px");
+            $(".tab tr:last td:first").css("border-bottom-left-radius","25px");
+            $(".tab tr:last td:last").css("border-bottom-right-radius","25px");
+
+        });
+    </script>
+</head>
+<body>
+    <table class="tab">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+</html>
